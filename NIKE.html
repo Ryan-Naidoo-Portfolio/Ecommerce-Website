@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>NIKE</title>
+<link type="text/css" rel="stylesheet" href="css/my-stylesheet.css"/>
+</head>
+<body>
+<style>
+.grid-item a{
+color:black;
+font-size:30px;
+font-family:Arial Black;
+text-decoration:none;
+
+}
+	
+</style>
+<h1>~~NIKE~~</h1>
+
+<div class="grid-container">
+     <div class="grid-item">
+	  <img src="NIKE/TEES/15412670_27238031_1000.WEBP">
+	  <a href="NIKE PSG.html">Olive Green Shirt</a>
+	 <h3>R325</h3>
+	
+	 </div>
+     <div class="grid-item">
+	 <img src="NIKE/TEES/15528466_27883018_1000.WEBP">
+	  <a href="NIKE TEES WHITE T STRIPE.html">WHITE STRIPE T-shirt</a>
+	 <h3>R300</h3>
+	 </div>
+	 
+     <div class="grid-item">
+	 <img src="NIKE/CAPS/486x486 (5).webp">
+	  <a href="NIKE CAP.html">METAL TICK BLUE CAP</a>
+	 <h3>R250</h3>
+	 </div>
+	 
+     <div class="grid-item">
+	 <img src="NIKE/JACKETS/nike blue jersey.jpg">
+	  <a href="NIKE BLUE JERSEY.html">BLUE SMOOSHJERSEY</a>
+	 <h3>R500</h3>
+	 </div>
+	 
+     <div class="grid-item">
+	 <img src="NIKE/TEES/15635085_28377669_1000.webp">
+	  <a href="NIKE TEEES.html">BLUE PAINT STYLE</a>
+	 <h3>R400</h3>
+	 </div>
+	 
+	 <div class="grid-item">
+	 <img src="NIKE/TEES/16006061_29930409_1000.webp">
+	  <a href="Nike black tracks.html">BLACK NIKE AIR</a>
+	 <h3>R600</h3>
+	 </div>
+	 
+	 <div class="grid-item">
+	 <img src="NIKE/PANTS/nike redish shorts.jpg">
+	  <a href="Nike redish shorts.html">MAROON SPORT SHORTS</a>
+	  <h3>R250</h3>
+	 </div>
+	 
+	 <div class="grid-item">
+	 <img src="NIKE/TEES/15654618_28392377_1000.webp">
+	  <a href="ADIDAS ADICOLOUR TRACKS.html">3 IMAGE NIKE</a>
+	 <h3>R300 </h3>
+	 </div>
+	 
+	 <div class="grid-item">
+	 <img src="NIKE/CAPS/486x486 (2).WEBP">
+	  <a href="NIKE CAP 2.html">METAL TICK BLACK CAP</a>
+	 <h3>R350 </h3>
+	 </div>
+	 
+     <div class="grid-item">
+	 <img src="NIKE/TEES/nike acid tee_1.jpg">
+	  <a href="Nike t.html">NIKE ACID T-SHIRT</a>
+	 <h3>R500</h3>
+	 </div>
+	 
+     <div class="grid-item">
+	 <img src="NIKE/TEES/nike gold tee_1.WEBP">
+	  <a href="Nike gold tees.html">GOLD NIKE T-SHIRT</a>
+	 <h3>R400</h3>
+	 </div>
+	 
+	 <div class="grid-item">
+	 <img src="NIKE/TEES/nike psg.WEBP">
+	  <a href="NIKE PSG.html">PSG T-SHIRT</a>
+	 <h3>R550</h3>
+	 </div>
+	 </div>
+	         <script>
+            
+            var 
+			rIndex,
+                table = document.getElementById("table");
+            
+			//display the input buttons
+			 function myfunction(){
+			var x=
+			document.getElementById("aaa");
+			if
+			(x.style.display ==="none")
+			{x.style.display="block";}
+			
+			else
+			{x.style.display="none"}
+			}
+            // check the empty input
+            function checkEmptyInput()
+            {
+                var isEmpty = false,
+                    fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value,
+                    age = document.getElementById("quantity").value;
+            
+                if(fname === ""){
+                    alert("First Name Connot Be Empty");
+                    isEmpty = true;
+                }
+                else if(lname === ""){
+                    alert("Last Name Connot Be Empty");
+                    isEmpty = true;
+                }
+                else if(age === ""){
+                    alert("Age Connot Be Empty");
+                    isEmpty = true;
+                }
+                return isEmpty;
+            }
+           
+			
+            // add Row
+            function addHtmlTableRow()
+            {
+                // get the table by id
+                // create a new row and cells
+                // get value from input text
+                // set the values into row cell's
+                if(!checkEmptyInput()){
+                var newRow = table.insertRow(table.length),
+                    cell1 = newRow.insertCell(0),
+                    cell2 = newRow.insertCell(1),
+                    cell3 = newRow.insertCell(2),
+                    fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value,
+                    age = document.getElementById("quantity").value;
+            
+                cell1.innerHTML = fname;
+                cell2.innerHTML = lname;
+                cell3.innerHTML = age;
+                // call the function to set the event to the new row
+                selectedRowToInput();
+            }
+            }
+            
+            // display selected row data into input text
+            function selectedRowToInput()
+            {
+                
+                for(var i = 1; i < table.rows.length; i++)
+                {
+                    table.rows[i].onclick = function()
+                    {
+                      // get the seected row index
+                      rIndex = this.rowIndex;
+                      document.getElementById("fname").value = this.cells[0].innerHTML;
+                      document.getElementById("lname").value = this.cells[1].innerHTML;
+                      document.getElementById("quantity").value = this.cells[2].innerHTML;
+                    };
+                }
+            }
+            selectedRowToInput();
+            
+            function editHtmlTbleSelectedRow()
+            {
+                var fname = document.getElementById("fname").value,
+                    lname = document.getElementById("lname").value,
+                    age = document.getElementById("quantity").value;
+               if(!checkEmptyInput()){
+                table.rows[rIndex].cells[0].innerHTML = fname;
+                table.rows[rIndex].cells[1].innerHTML = lname;
+                table.rows[rIndex].cells[2].innerHTML = age;
+              }
+            }
+            
+            function removeSelectedRow()
+            {
+                table.deleteRow(rIndex);
+                // clear input text
+                document.getElementById("fname").value = "";
+                document.getElementById("lname").value = "";
+                document.getElementById("quantity").value = "";
+            }
+			
+			
+        </script>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+		<br>
+			<footer class="footer-distributed">
+ 
+		<div class="footer-left">
+ 
+		<h3>THREADS</h3>
+ 
+		<p class="footer-links">
+		<a href="threads.html">Home</a>
+	·
+		<a href="legal.html">Terms And Conditions</a>
+	·
+		<a href="covid 19 infomation.html">COVID-19</a>
+		</p>
+ 
+		<p class="footer-company-name">threads&copy; 2019</p>
+		</div>
+ 
+		<div class="footer-center">
+ 
+		<div>
+		<i class="fa fa-map-marker"></i>
+		<p><span>21 Revolution Street</span> Durban, South Africa</p>
+		</div>
+ 
+		<div>
+		<i class="fa fa-phone"></i>
+		<p>+23 788587233</p>
+		</div>
+ 
+		<div>
+		<i class="fa fa-envelope"></i>
+		<p><a href="naidoonayr0901@gmail.com">Threads@gmail.com</a></p>
+		</div>
+ 
+		</div>
+ 
+		<div class="footer-right">
+ 
+		<p class="footer-company-about">
+		<span>Our Store</span>
+	Threads is a store to give you the best deals in streetwear and to always keep you looking fresh.
+		</p>
+
+ 
+		</div>
+ 
+		</footer>   
+</body>
+</html>
